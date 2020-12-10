@@ -2,10 +2,10 @@ import {applyMiddleware} from 'redux';
 import {combineReducers} from 'redux';
 import {createStore} from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import {TeamInfoReducer} from "./features/reducer";
+import {TeamInfoReducer} from "./reducer";
 import {takeEvery} from 'redux-saga/effects'
-import {appReducer} from "./app/app-reducer";
-import {fetchPlayersSaga, fetchTeamsSaga} from "./features/actions";
+import {appReducer} from "../app/app-reducer";
+import {fetchPlayersSaga, fetchTeamsSaga} from "./actions";
 
 let reducers = combineReducers({
     TeamInfoReducer,

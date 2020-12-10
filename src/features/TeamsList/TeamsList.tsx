@@ -1,13 +1,15 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Team} from './Team/Team';
-import {RootState} from "../../store";
+import {RootState} from "../../redux/store";
 import {ITeam} from "../../api/teams-api";
-import {fetchTeams} from '../actions';
+import {fetchTeams} from '../../redux/actions';
 import {Spin} from "../../components/Spin/Spin";
+// @ts-ignore
+import Fade from 'react-reveal/Fade';
 
 interface IProps {
-    fetching: boolean
+    fetching: boolean,
 }
 
 export const TeamsList = ({fetching}: IProps) => {
@@ -21,13 +23,14 @@ export const TeamsList = ({fetching}: IProps) => {
     }, [])
     return (
         <>
-            {
-                fetching && <Spin/>
-            }
-            <div>
-                <h1>Teams List:</h1>
-                {teams.map(i => <Team name={i.name} key={i.id} teamId={i.id}/>)}
-            </div>
+                {
+                    fetching && <Spin/>
+                }
+            <Fade right>
+                <div>
+                    {teams.map(i => <Team name={i.name} key={i.id} teamId={i.id}/>)}
+                </div>
+            </Fade>
         </>
     );
 };

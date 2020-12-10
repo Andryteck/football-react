@@ -1,8 +1,8 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Player} from './Player/Player';
 import {Spin} from "../../components/Spin/Spin";
 import {useSelector} from "react-redux";
-import {RootState} from "../../store";
+import {RootState} from "../../redux/store";
 import {IPlayer} from "../../api/teams-api";
 import {useHistory} from 'react-router-dom';
 
@@ -24,7 +24,6 @@ export const PlayersList = ({fetching}: IProps) => {
                 fetching && <Spin/>
             }
             <div>
-                <h2>Players List:</h2>
                 {players.map(i => <Player name={i.name}/>)}
                 <button className={'button'} onClick={handleClick}>Back</button>
             </div>

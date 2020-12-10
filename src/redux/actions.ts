@@ -1,5 +1,5 @@
 import {call, put} from "redux-saga/effects";
-import {InferActionTypes} from "../store";
+import {InferActionTypes} from "./store";
 import {IPlayer, ITeam, TeamsAPI} from "../api/teams-api";
 import {startFetching, stopFetching} from "../app/app-reducer";
 

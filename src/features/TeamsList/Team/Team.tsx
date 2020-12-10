@@ -1,5 +1,5 @@
 import React from 'react';
-import {fetchPlayers} from "../../actions";
+import {fetchPlayers} from "../../../redux/actions";
 import {useDispatch} from "react-redux";
 import {Link} from 'react-router-dom';
 // @ts-ignore
@@ -19,7 +19,7 @@ export const Team = ({name, teamId}: IProps) => {
     }
 
     return (
-        <Link to={`/players/${teamId}`} style={{textDecoration: 'none', color: 'black'}}>
+        <Link to={`/players/${teamId}`} style={{textDecoration: 'none', color: '#666666'}}>
             <div onClick={onClickHandler} className={s.team}>
                 {name}
             </div>

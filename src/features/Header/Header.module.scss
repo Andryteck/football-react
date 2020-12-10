@@ -1,0 +1,14 @@
+.header {
+  height: 80px;
+  width: 100%;
+  background-color: #262626;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@media (max-width: 425px) {
+  .header {
+    justify-content: center;
+  }
+}

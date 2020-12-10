@@ -1,0 +1,17 @@
+import React from 'react';
+import ProfileInfo from './ProfileInfo/ProfileInfo';
+
+interface IProps  {
+
+}
+
+export const Profile = (props: IProps) => {
+    return (
+        <div>
+            <ProfileInfo/>
+        </div>
+
+
+    )
+
+}
