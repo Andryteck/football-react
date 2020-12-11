@@ -1,5 +1,5 @@
-import {ActionType} from './actions';
-import {IPlayer, ITeam} from "../api/teams-api";
+import {IPlayer, ITeam} from "../../api/teams-api";
+import {ActionType} from "../actions/actions";
 
 type InitialStateType = {
     teams: ITeam[],
@@ -11,7 +11,7 @@ const initialState:InitialStateType = {
     players: []
 }
 
-export const TeamInfoReducer = (state:InitialStateType = initialState, action: ActionType):InitialStateType => {
+export const teamInfoReducer = (state:InitialStateType = initialState, action: ActionType):InitialStateType => {
     switch (action.type) {
         case 'TEAMS/FETCH_TEAMS':
             return {

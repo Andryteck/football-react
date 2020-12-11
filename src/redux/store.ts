@@ -1,29 +1,52 @@
-import {applyMiddleware} from 'redux';
+import {applyMiddleware, compose} from 'redux';
 import {combineReducers} from 'redux';
 import {createStore} from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import {TeamInfoReducer} from "./reducer";
 import {takeEvery} from 'redux-saga/effects'
 import {appReducer} from "../app/app-reducer";
-import {fetchPlayersSaga, fetchTeamsSaga} from "./actions";
+import {
+    addToFavoritePlayerSaga,
+    addToFavoriteTeamSaga,
+    fetchPlayersSaga,
+    fetchTeamsSaga,
+    removeTeamSaga
+} from "./actions/actions";
+import {profile} from "./reducers/profile";
+import {teamInfoReducer} from "./reducers/teamInfo";
+import {persistStore, persistReducer} from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 
 let reducers = combineReducers({
-    TeamInfoReducer,
+    teamInfoReducer,
     appReducer,
+    profile
 })
 
 export type RootState = ReturnType<typeof reducers>
 export type InferActionTypes<T> = T extends { [keys: string]: (...args: any[]) => infer U } ? U : never
 
-const sagaMiddleWare = createSagaMiddleware()
+export const getStore = () => {
+    const persistConfig = {key: "root", storage};
+    const persistedReducer = persistReducer(persistConfig, reducers);
 
-export const store = createStore(reducers, applyMiddleware(sagaMiddleWare));
+    const sagaMiddleWare = createSagaMiddleware()
 
-sagaMiddleWare.run(rootWatcher)
+// @ts-ignore
+    const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+    const store = createStore(persistedReducer, composeEnhancers(applyMiddleware(sagaMiddleWare)));
 
-function* rootWatcher() {
-    yield takeEvery('TEAMS/FETCH-TEAMS', fetchTeamsSaga)
-    yield takeEvery('TEAMS/FETCH-PLAYERS', fetchPlayersSaga)
+    const persistor = persistStore(store);
+
+    sagaMiddleWare.run(rootWatcher)
+
+    function* rootWatcher() {
+        yield takeEvery('TEAMS/FETCH-TEAMS', fetchTeamsSaga)
+        yield takeEvery('TEAMS/FETCH-PLAYERS', fetchPlayersSaga)
+        yield takeEvery('FAVOURITES/ADD-TEAM', addToFavoriteTeamSaga)
+        yield takeEvery('FAVOURITES/ADD-PLAYER', addToFavoritePlayerSaga)
+        yield takeEvery('FAVOURITES/REMOVE-TEAM', removeTeamSaga)
+    }
+
+    return {persistor, store};
 }
 
-export default store
