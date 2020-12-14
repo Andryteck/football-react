@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/football-react/static/css/main.be182040.chunk.css",
-    "main.js": "/football-react/static/js/main.8ae176c9.chunk.js",
-    "main.js.map": "/football-react/static/js/main.8ae176c9.chunk.js.map",
+    "main.css": "/football-react/static/css/main.1aa81fd7.chunk.css",
+    "main.js": "/football-react/static/js/main.140808f8.chunk.js",
+    "main.js.map": "/football-react/static/js/main.140808f8.chunk.js.map",
     "runtime-main.js": "/football-react/static/js/runtime-main.f03f4483.js",
     "runtime-main.js.map": "/football-react/static/js/runtime-main.f03f4483.js.map",
-    "static/js/2.4e85aeb1.chunk.js": "/football-react/static/js/2.4e85aeb1.chunk.js",
-    "static/js/2.4e85aeb1.chunk.js.map": "/football-react/static/js/2.4e85aeb1.chunk.js.map",
+    "static/js/2.ad36dc56.chunk.js": "/football-react/static/js/2.ad36dc56.chunk.js",
+    "static/js/2.ad36dc56.chunk.js.map": "/football-react/static/js/2.ad36dc56.chunk.js.map",
     "index.html": "/football-react/index.html",
-    "static/css/main.be182040.chunk.css.map": "/football-react/static/css/main.be182040.chunk.css.map",
-    "static/js/2.4e85aeb1.chunk.js.LICENSE.txt": "/football-react/static/js/2.4e85aeb1.chunk.js.LICENSE.txt",
-    "static/media/spin.7019bd74.svg": "/football-react/static/media/spin.7019bd74.svg"
+    "static/css/main.1aa81fd7.chunk.css.map": "/football-react/static/css/main.1aa81fd7.chunk.css.map",
+    "static/js/2.ad36dc56.chunk.js.LICENSE.txt": "/football-react/static/js/2.ad36dc56.chunk.js.LICENSE.txt",
+    "static/media/spin.7019bd74.svg": "/football-react/static/media/spin.7019bd74.svg",
+    "static/media/userImage.65de8185.jpg": "/football-react/static/media/userImage.65de8185.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.f03f4483.js",
-    "static/js/2.4e85aeb1.chunk.js",
-    "static/css/main.be182040.chunk.css",
-    "static/js/main.8ae176c9.chunk.js"
+    "static/js/2.ad36dc56.chunk.js",
+    "static/css/main.1aa81fd7.chunk.css",
+    "static/js/main.140808f8.chunk.js"
   ]
 }
