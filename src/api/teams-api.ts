@@ -11,6 +11,7 @@ const instance = axios.create({
     ...settings,
 });
 
+
 export const TeamsAPI = {
     getTeams() {
         return instance.get<TeamsInfo>('competitions/2017/teams')
@@ -18,6 +19,7 @@ export const TeamsAPI = {
     getPlayersOfCurrentTeam(teamId: number) {
         return instance.get<PlayersInfo>(`teams/${teamId}`)
     },
+
 }
 
 

@@ -7,6 +7,7 @@ import {IPlayer} from "../../api/teams-api";
 import {useHistory} from 'react-router-dom';
 // @ts-ignore
 import Fade from 'react-reveal/Fade';
+import {Container} from "../../components/Container/Container";
 
 interface IProps {
     fetching: boolean,
@@ -26,9 +27,9 @@ export const PlayersList = ({fetching}: IProps) => {
                 fetching && <Spin/>
             }
             <Fade right>
-            <div>
-                {players.map(i => <Player name={i.name} key={i.id} playerId={i.id}/>)}
-            </div>
+                <Container>
+                    {players.map(i => <Player name={i.name} key={i.id} playerId={i.id}/>)}
+                </Container>
             </Fade>
             <button className={'button'} onClick={handleClick}>Back</button>
         </>

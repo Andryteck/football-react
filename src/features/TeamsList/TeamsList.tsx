@@ -6,7 +6,10 @@ import {ITeam} from "../../api/teams-api";
 import {Spin} from "../../components/Spin/Spin";
 // @ts-ignore
 import Fade from 'react-reveal/Fade';
+// @ts-ignore
+import s from './teamlist.module.scss'
 import {fetchTeams} from "../../redux/actions/actions";
+import {Container} from "../../components/Container/Container";
 
 interface IProps {
     fetching: boolean,
@@ -20,15 +23,16 @@ export const TeamsList = ({fetching}: IProps) => {
     useEffect(() => {
         dispatch(fetchTeams())
     }, [])
+
     return (
         <>
-                {
-                    fetching && <Spin/>
-                }
+            {
+                fetching && <Spin/>
+            }
             <Fade right>
-                <div>
+                <Container>
                     {teams.map(i => <Team name={i.name} key={i.id} teamId={i.id}/>)}
-                </div>
+                </Container>
             </Fade>
         </>
     );
