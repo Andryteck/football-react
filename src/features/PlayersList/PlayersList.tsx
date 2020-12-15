@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Player} from './Player/Player';
 import {Spin} from "../../components/Spin/Spin";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "../../redux/store";
 import {IPlayer} from "../../api/teams-api";
-import {useHistory} from 'react-router-dom';
+import {useHistory, useParams} from 'react-router-dom';
 // @ts-ignore
 import Fade from 'react-reveal/Fade';
 import {Container} from "../../components/Container/Container";
+import {fetchPlayers} from "../../redux/actions/actions";
 
 interface IProps {
     fetching: boolean,
@@ -15,11 +16,18 @@ interface IProps {
 
 export const PlayersList = ({fetching}: IProps) => {
     const players = useSelector<RootState, IPlayer[]>(state => state.teamInfoReducer.players)
+
     let history = useHistory();
+    const dispatch = useDispatch()
+
+    const {teamId} = useParams<{ teamId: string }>()
 
     const handleClick = () => {
         history.push("/");
     }
+    useEffect(() => {
+        dispatch(fetchPlayers(+teamId))
+    }, [teamId])
 
     return (
         <>

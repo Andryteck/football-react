@@ -1,34 +1,50 @@
 .descriptionBlock {
-  padding: 10px;
-  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  width: 930px;
+  padding: 20px;
+  height: 100vh;
   font-family: "Josefin Sans", sans-serif;
   font-size: 25px;
 
-  & > div {
-    border-bottom: 2px solid deepskyblue;
-    display: flex;
-    align-items: center;
-    width: 100%;
+  .avatarWrapper {
+    height: 315px;
+    background: white;
+    padding: 15px 15px 6px 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #d3d9de, 0 0 0 1px #e7e8ec;
+    margin: 15px 0 0;
+    .pageAvatar {
+      width: 250px;
+      height: 300px;
+      box-sizing: border-box;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+  }
 
-    & > p {
-      margin-right: 10px;
-      padding: 5px;
-      margin-left: 15px;
-
+  .infoWrapper {
+    position: relative;
+    width: 600px;
+    height: 100%;
+    background: white;
+    padding: 15px 15px 6px 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 0 0 #d3d9de, 0 0 0 1px #e7e8ec;
+    margin: 15px 0 0;
+    .fullname {
+      border-bottom: 1px solid #e7e8ec;
+      margin: 15px 0 0;
+    }
+    .teams {
+      border-bottom: 1px solid #e7e8ec;
+    }
+    .players {
+      border-bottom: 1px solid #e7e8ec;
+      margin: 15px 0 0;
     }
   }
 }
 
-.pageAvatar {
-  width: 250px;
-  height: 300px;
 
-  border: 1px solid rgba(5, 148, 143, 0.8);
-  box-sizing: border-box;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}

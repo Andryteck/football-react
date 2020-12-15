@@ -21,26 +21,20 @@
       opacity: 0.3;
       background-color: #1f1f20;
     }
-
-    & button {
-      display: none;
-    }
-
-    &:hover button {
-      display: block;
-    }
   }
 
   .team {
-    width: 175px;
+    width: 200px;
     height: 55px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    font-size: 20px;
-    overflow: hidden;
+    margin-top: 10px;
 
-
+    & > p {
+      font-size: 20px;
+      width: 132px;
+    }
   }
 }
 

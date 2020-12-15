@@ -5,6 +5,7 @@ import s from './ProfileInfo.module.scss';
 import userImage from "../../../assets/images/userImage.jpg";
 import {IItem} from "../../../redux/reducers/profile";
 import {FavouriteTeam} from "./FavouriteTeam/FavouriteTeam";
+import {FavouritePlayer} from './FavouritePlayer/FavooritePlayer';
 
 interface IProps {
     teamsInfo: IItem[],
@@ -14,21 +15,23 @@ interface IProps {
 const ProfileInfo = ({teamsInfo, playersInfo}: IProps) => {
 
     return (
-        <div>
-            <div className={s.descriptionBlock}>
+        <div className={s.descriptionBlock}>
+            <div className={s.avatarWrapper}>
                 <img src={userImage} className={s.pageAvatar}/>
-                <div>
-                    <p style={{fontWeight: "bold"}}>Full name:</p>
+            </div>
+            <div className={s.infoWrapper}>
+                <div className={s.fullname}>
                     <p>Andrei Kulik</p>
                 </div>
-                <div>
+                <div className={s.teams}>
                     <p style={{fontWeight: "bold"}}>Favourite teams: </p>
-                    {teamsInfo.length ? teamsInfo.map((i: IItem) => <FavouriteTeam key={i.id} name={i.name} id={i.id}/>) : 'no favourites'}
+                    {teamsInfo.length ? teamsInfo.map((i: IItem) => <FavouriteTeam key={i.id} name={i.name}
+                                                                                   id={i.id}/>) : 'no favourites'}
                 </div>
-                <div>
+                <div className={s.players}>
                     <p style={{fontWeight: "bold"}}>Favourite players: </p>
-                    {playersInfo.length ? playersInfo.map((i: IItem) => <p key={i.id}>{i.name}</p>) : 'no favourites'}
-
+                    {playersInfo.length ? playersInfo.map((i: IItem) => <FavouritePlayer key={i.id} name={i.name}
+                                                                                         id={i.id}/>) : 'no favourites'}
                 </div>
             </div>
         </div>

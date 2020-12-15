@@ -21,7 +21,7 @@ const App = () => {
                     <div className="app-wrapper">
                         <Switch>
                             <Route exact path={'/'} render={() => <TeamsList fetching={fetching}/>}/>
-                            <Route path={'/players/:number'} render={() => <PlayersList fetching={fetching}/>}/>
+                            <Route path={'/players/:teamId'} render={() => <PlayersList fetching={fetching}/>}/>
                             <Route path={'/profile'} render={() => <Profile/>}/>
                         </Switch>
                     </div>

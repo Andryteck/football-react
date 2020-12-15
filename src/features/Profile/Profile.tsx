@@ -11,6 +11,7 @@ interface IProps  {
 export const Profile = (props: IProps) => {
     const teamsInfo = useSelector<RootState, IItem[]>(state => state.profile.favoriteTeams)
     const playersInfo = useSelector<RootState, IItem[]>(state => state.profile.favoritePlayers)
+
     return (
         <div>
             <ProfileInfo teamsInfo={teamsInfo} playersInfo={playersInfo}/>
