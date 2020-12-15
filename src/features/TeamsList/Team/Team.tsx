@@ -28,13 +28,15 @@ export const Team = ({name, teamId}: IProps) => {
     return (
         <div className={s.teamWrapper}>
             <Link to={`/players/${teamId}`} style={{textDecoration: 'none', color: '#666666'}}>
-                <img src={`https://crests.football-data.org/${teamId}.svg`} alt="team" title={'team'}
-                     style={{width: 200, height: 200}} onClick={onClickHandler}/>
+                <div className={s.teamAvatar}>
+                    <img src={`https://crests.football-data.org/${teamId}.svg`} alt="team" title={'team'}
+                         onClick={onClickHandler} style={{width: 200}}/>
+                    <BtnAdd onClick={onClickAdd} title={'+'}/>
+                </div>
             </Link>
             <div className={s.team}>
                 {name}
             </div>
-            {isShow ? <BtnAdd onClick={onClickAdd} title={'+'}/> : <p>Added to profile</p>}
         </div>
     );
 };
