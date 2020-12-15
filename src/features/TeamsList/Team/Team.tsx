@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React, {useCallback, useState} from 'react';
 import {useDispatch} from "react-redux";
 // @ts-ignore
 import s from './team.module.scss'
@@ -12,6 +12,7 @@ interface IProps {
 }
 
 export const Team = ({name, teamId}: IProps) => {
+    const [isShow, setIsShow] = useState<boolean>(true)
     const dispatch = useDispatch()
 
     const onClickHandler = () => {
@@ -20,6 +21,7 @@ export const Team = ({name, teamId}: IProps) => {
     }
     const onClickAdd = () => {
         dispatch(addTeamToFavourite(teamId, name))
+        setIsShow(false)
     }
 
 
@@ -32,7 +34,7 @@ export const Team = ({name, teamId}: IProps) => {
             <div className={s.team}>
                 {name}
             </div>
-            <BtnAdd onClick={onClickAdd} title={'+'}/>
+            {isShow ? <BtnAdd onClick={onClickAdd} title={'+'}/> : <p>Added to profile</p>}
         </div>
     );
 };
