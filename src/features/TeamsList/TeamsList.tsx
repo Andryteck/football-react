@@ -6,14 +6,12 @@ import {ITeam} from "../../api/teams-api";
 import {Spin} from "../../components/Spin/Spin";
 // @ts-ignore
 import Fade from 'react-reveal/Fade';
-// @ts-ignore
-import s from './teamlist.module.scss'
 import {fetchTeams} from "../../redux/actions/actions";
 import {Container} from "../../components/Container/Container";
 import {getTeams} from "../../selectors";
 
 interface IProps {
-    fetching: boolean,
+    fetching?: boolean,
 }
 
 export const TeamsList = ({fetching}: IProps) => {

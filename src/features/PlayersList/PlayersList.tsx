@@ -12,7 +12,7 @@ import {fetchPlayers} from "../../redux/actions/actions";
 import {getPlayers} from "../../selectors";
 
 interface IProps {
-    fetching: boolean,
+    fetching?: boolean,
 }
 
 export const PlayersList = ({fetching}: IProps) => {
@@ -24,7 +24,7 @@ export const PlayersList = ({fetching}: IProps) => {
     const {teamId} = useParams<{ teamId: string }>()
 
     const handleClick = () => {
-        history.push("/");
+        history.push("/teams");
     }
     useEffect(() => {
         dispatch(fetchPlayers(+teamId))
