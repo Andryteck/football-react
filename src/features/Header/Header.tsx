@@ -29,6 +29,7 @@ function Header({setCurrentLanguage, lang}: IProps) {
 
     return (
         <div className={style.header}>
+            <Nav/>
             <div>
                 <div className={style.earth} onClick={() => changeLanguage()}>
                     <img src={eath} alt="world"/>
@@ -37,7 +38,6 @@ function Header({setCurrentLanguage, lang}: IProps) {
                     {langs[lang].toUpperCase()}
                 </p>
             </div>
-            <Nav/>
         </div>
     );
 }
