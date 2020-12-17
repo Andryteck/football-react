@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {removeTeam} from "../../../../redux/actions/actions";
+import {removePlayer} from "../../../../redux/actions/actions";
 // @ts-ignore
 import s from './favouritePlayer.module.scss'
 import {Btn} from "../../../../components/Button/Btn";
@@ -17,7 +17,7 @@ export const FavouritePlayer = ({name, id}: IProps) => {
     const avatarColors = getAvatarColor(name[0].toUpperCase());
 
     const onRemove = () => {
-        dispatch(removeTeam(id, name))
+        dispatch(removePlayer(id, name))
     }
 
     return (

@@ -1,4 +1,5 @@
 import {ActionType} from "../actions/actions";
+import produce from 'immer'
 
 export interface IItem {
     name: string,
@@ -40,6 +41,11 @@ export const profile = (state: InitialStateType = initialState, action: ActionTy
             return {
                 ...state,
                 favoriteTeams: [...state.favoriteTeams.filter(i => i.id !== action.id)]
+            }
+        case "FAVOURITES/REMOVE_PLAYER":
+            return {
+                ...state,
+                favoritePlayers: [...state.favoritePlayers.filter(i => i.id !== action.id)]
             }
         default:
             return state

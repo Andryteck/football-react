@@ -9,13 +9,14 @@ import {useHistory, useParams} from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 import {Container} from "../../components/Container/Container";
 import {fetchPlayers} from "../../redux/actions/actions";
+import {getPlayers} from "../../selectors";
 
 interface IProps {
     fetching: boolean,
 }
 
 export const PlayersList = ({fetching}: IProps) => {
-    const players = useSelector<RootState, IPlayer[]>(state => state.teamInfoReducer.players)
+    const players = useSelector<RootState, IPlayer[]>(getPlayers)
 
     let history = useHistory();
     const dispatch = useDispatch()

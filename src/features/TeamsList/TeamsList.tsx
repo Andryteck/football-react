@@ -10,13 +10,14 @@ import Fade from 'react-reveal/Fade';
 import s from './teamlist.module.scss'
 import {fetchTeams} from "../../redux/actions/actions";
 import {Container} from "../../components/Container/Container";
+import {getTeams} from "../../selectors";
 
 interface IProps {
     fetching: boolean,
 }
 
 export const TeamsList = ({fetching}: IProps) => {
-    const teams = useSelector<RootState, ITeam[]>(state => state.teamInfoReducer.teams)
+    const teams = useSelector<RootState, ITeam[]>(getTeams)
 
     const dispatch = useDispatch()
 

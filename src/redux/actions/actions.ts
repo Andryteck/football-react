@@ -21,6 +21,9 @@ export const actions = {
     } as const),
     removeTeam: (id: number, name: string) => ({
         type: 'FAVOURITES/REMOVE_TEAM', id, name
+    } as const),
+    removePlayer: (id: number, name: string) => ({
+        type: 'FAVOURITES/REMOVE_PLAYER', id, name
     } as const)
 }
 
@@ -76,5 +79,11 @@ export function* removeTeamSaga(action: ReturnType<typeof removeTeam>) {
 }
 
 export const removeTeam = (id: number, name: string) => ({type: 'FAVOURITES/REMOVE-TEAM', id, name})
+
+export function* removePlayerSaga(action: ReturnType<typeof removeTeam>) {
+    yield put(actions.removePlayer(action.id, action.name))
+}
+
+export const removePlayer = (id: number, name: string) => ({type: 'FAVOURITES/REMOVE-PLAYER', id, name})
 
 

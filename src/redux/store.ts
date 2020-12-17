@@ -8,7 +8,7 @@ import {
     addToFavoritePlayerSaga,
     addToFavoriteTeamSaga,
     fetchPlayersSaga,
-    fetchTeamsSaga,
+    fetchTeamsSaga, removePlayerSaga,
     removeTeamSaga
 } from "./actions/actions";
 import {profile} from "./reducers/profile";
@@ -45,6 +45,7 @@ export const getStore = () => {
         yield takeEvery('FAVOURITES/ADD-TEAM', addToFavoriteTeamSaga)
         yield takeEvery('FAVOURITES/ADD-PLAYER', addToFavoritePlayerSaga)
         yield takeEvery('FAVOURITES/REMOVE-TEAM', removeTeamSaga)
+        yield takeEvery('FAVOURITES/REMOVE-PLAYER', removePlayerSaga)
     }
 
     return {persistor, store};
