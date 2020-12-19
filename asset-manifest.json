@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/football-react/static/css/main.3ef47c90.chunk.css",
-    "main.js": "/football-react/static/js/main.7484b80a.chunk.js",
-    "main.js.map": "/football-react/static/js/main.7484b80a.chunk.js.map",
+    "main.css": "/football-react/static/css/main.15d6cfef.chunk.css",
+    "main.js": "/football-react/static/js/main.d199b01e.chunk.js",
+    "main.js.map": "/football-react/static/js/main.d199b01e.chunk.js.map",
     "runtime-main.js": "/football-react/static/js/runtime-main.f03f4483.js",
     "runtime-main.js.map": "/football-react/static/js/runtime-main.f03f4483.js.map",
-    "static/js/2.453e449e.chunk.js": "/football-react/static/js/2.453e449e.chunk.js",
-    "static/js/2.453e449e.chunk.js.map": "/football-react/static/js/2.453e449e.chunk.js.map",
+    "static/js/2.4f0100eb.chunk.js": "/football-react/static/js/2.4f0100eb.chunk.js",
+    "static/js/2.4f0100eb.chunk.js.map": "/football-react/static/js/2.4f0100eb.chunk.js.map",
     "index.html": "/football-react/index.html",
-    "static/css/main.3ef47c90.chunk.css.map": "/football-react/static/css/main.3ef47c90.chunk.css.map",
-    "static/js/2.453e449e.chunk.js.LICENSE.txt": "/football-react/static/js/2.453e449e.chunk.js.LICENSE.txt",
+    "static/css/main.15d6cfef.chunk.css.map": "/football-react/static/css/main.15d6cfef.chunk.css.map",
+    "static/js/2.4f0100eb.chunk.js.LICENSE.txt": "/football-react/static/js/2.4f0100eb.chunk.js.LICENSE.txt",
     "static/media/eath.a2cbbb50.svg": "/football-react/static/media/eath.a2cbbb50.svg",
     "static/media/spin.7019bd74.svg": "/football-react/static/media/spin.7019bd74.svg",
     "static/media/userImage.65de8185.jpg": "/football-react/static/media/userImage.65de8185.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.f03f4483.js",
-    "static/js/2.453e449e.chunk.js",
-    "static/css/main.3ef47c90.chunk.css",
-    "static/js/main.7484b80a.chunk.js"
+    "static/js/2.4f0100eb.chunk.js",
+    "static/css/main.15d6cfef.chunk.css",
+    "static/js/main.d199b01e.chunk.js"
   ]
 }
