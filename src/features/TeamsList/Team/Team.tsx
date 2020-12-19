@@ -12,11 +12,12 @@ interface IProps {
 }
 
 export const Team = ({name, teamId}: IProps) => {
+    const [isClick, setIsClick] = useState<boolean>(true)
     const dispatch = useDispatch()
 
     const onClickAdd = () => {
         dispatch(addTeamToFavourite(teamId, name))
-
+        setIsClick(false)
     }
 
 
@@ -30,7 +31,7 @@ export const Team = ({name, teamId}: IProps) => {
             </Link>
             <div className={s.team}>
                 <p>{name}</p>
-                <Btn onClick={onClickAdd} title={'+'}/>
+                {isClick && <Btn onClick={onClickAdd} title={'+'}/>}
             </div>
         </div>
     );

@@ -4,7 +4,7 @@ import s from "./Button.module.scss";
 
 interface IProps {
     onClick: () => void,
-    title: string
+    title: string | any
 }
 
 export const Btn = ({onClick, title}: IProps) => {

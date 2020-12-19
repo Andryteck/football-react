@@ -20,6 +20,11 @@
   margin-top: 17px;
 }
 
+@media (max-width: 967px) {
+  .header {
+  }
+}
+
 @media (max-width: 425px) {
   .header {
     justify-content: center;

@@ -20,10 +20,10 @@ export const actions = {
         type: 'FAVOURITES/ADD_PLAYER', name, playerId
     } as const),
     removeTeam: (id: number, name: string) => ({
-        type: 'FAVOURITES/REMOVE_TEAM', id, name
+        type: 'FAVOURITES/REMOVE_TEAM', payload: {id, name}
     } as const),
     removePlayer: (id: number, name: string) => ({
-        type: 'FAVOURITES/REMOVE_PLAYER', id, name
+        type: 'FAVOURITES/REMOVE_PLAYER', payload: {id, name}
     } as const)
 }
 

@@ -1,11 +1,16 @@
 .descriptionBlock {
   display: flex;
   justify-content: space-between;
-  width: 930px;
   padding: 20px;
+  width: 930px;
   height: 100vh;
   font-family: "Josefin Sans", sans-serif;
   font-size: 25px;
+  @media (max-width: 967px) {
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 90%;
+  }
 
   .avatarWrapper {
     height: 315px;
@@ -14,6 +19,7 @@
     border-radius: 4px;
     box-shadow: 0 1px 0 0 #d3d9de, 0 0 0 1px #e7e8ec;
     margin: 15px 0 0;
+
     .pageAvatar {
       width: 250px;
       height: 300px;
@@ -33,13 +39,16 @@
     border-radius: 4px;
     box-shadow: 0 1px 0 0 #d3d9de, 0 0 0 1px #e7e8ec;
     margin: 15px 0 0;
+
     .fullname {
       border-bottom: 1px solid #e7e8ec;
       margin: 15px 0 0;
     }
+
     .teams {
       border-bottom: 1px solid #e7e8ec;
     }
+
     .players {
       border-bottom: 1px solid #e7e8ec;
       margin: 15px 0 0;

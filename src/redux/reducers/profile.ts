@@ -26,9 +26,14 @@ export const profile = (state: InitialStateType = initialState, action: ActionTy
             })
             return {
                 ...state,
-                favoriteTeams: [...filteredStateByTeams, {name: action.name, id: action.teamId}]
+                favoriteTeams: produce(filteredStateByTeams, draft => {
+                    draft.push({name: action.name, id: action.teamId})
+                })
             }
-
+            // return {
+            //     ...state,
+            //     favoriteTeams: [...filteredStateByTeams, {name: action.name, id: action.teamId}]
+            // }
         case "FAVOURITES/ADD_PLAYER":
             let filteredStateByPlayers = state.favoritePlayers.filter((i) => {
                 return i.id !== action.playerId
@@ -40,12 +45,12 @@ export const profile = (state: InitialStateType = initialState, action: ActionTy
         case "FAVOURITES/REMOVE_TEAM":
             return {
                 ...state,
-                favoriteTeams: [...state.favoriteTeams.filter(i => i.id !== action.id)]
+                favoriteTeams: [...state.favoriteTeams.filter(i => i.id !== action.payload.id)]
             }
         case "FAVOURITES/REMOVE_PLAYER":
             return {
                 ...state,
-                favoritePlayers: [...state.favoritePlayers.filter(i => i.id !== action.id)]
+                favoritePlayers: [...state.favoritePlayers.filter(i => i.id !== action.payload.id)]
             }
         default:
             return state

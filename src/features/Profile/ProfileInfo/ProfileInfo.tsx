@@ -3,6 +3,8 @@ import React from 'react';
 import s from './ProfileInfo.module.scss';
 // @ts-ignore
 import userImage from "../../../assets/images/userImage.jpg";
+// @ts-ignore
+import Tilt from 'react-tilt'
 import {IItem} from "../../../redux/reducers/profile";
 import {FavouriteTeam} from "./FavouriteTeam/FavouriteTeam";
 import {FavouritePlayer} from './FavouritePlayer/FavooritePlayer';
@@ -16,9 +18,11 @@ const ProfileInfo = ({teamsInfo, playersInfo}: IProps) => {
 
     return (
         <div className={s.descriptionBlock}>
-            <div className={s.avatarWrapper}>
-                <img src={userImage} className={s.pageAvatar}/>
-            </div>
+            <Tilt style={{height: 380}} options={{max: 10}}>
+                <div className={s.avatarWrapper}>
+                    <img src={userImage} className={s.pageAvatar}/>
+                </div>
+            </Tilt>
             <div className={s.infoWrapper}>
                 <div className={s.fullname}>
                     <p>Andrei Kulik</p>

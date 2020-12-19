@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 // @ts-ignore
 import s from './player.module.scss'
 import {addPlayerToFavourite, fetchPlayers} from "../../../redux/actions/actions";
@@ -13,11 +13,13 @@ interface IProps {
 }
 
 export const Player = ({name, playerId}: IProps) => {
+    const [isClick, setIsClick] = useState<boolean>(true)
     const dispatch = useDispatch()
     const avatarColors = getAvatarColor(name[0].toUpperCase());
 
     const onClickAdd = () => {
         dispatch(addPlayerToFavourite(playerId, name))
+        setIsClick(false)
     }
 
     return (
@@ -31,7 +33,7 @@ export const Player = ({name, playerId}: IProps) => {
             </PlayerAvatar>
             <div className={s.player}>
                 <p>{name}</p>
-                <Btn onClick={onClickAdd} title={'+'}/>
+                {isClick && <Btn onClick={onClickAdd} title={'+'}/>}
             </div>
         </div>
     );
