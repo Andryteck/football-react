@@ -1,7 +1,7 @@
 import {IPlayer, ITeam} from "../../api/teams-api";
 import {ActionType} from "../actions/actions";
 
-type InitialStateType = {
+export type InitialStateType = {
     teams: ITeam[],
     players: IPlayer[]
 }
