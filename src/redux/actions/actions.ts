@@ -10,6 +10,9 @@ export const actions = {
     getTeams: (payload: ITeam[]) => ({
         type: 'TEAMS/FETCH_TEAMS', payload
     } as const),
+    getTeamsFailure: () => ({
+        type: 'TEAMS/FETCH_TEAMS_FAILURE'
+    } as const),
     getPlayers: (payload: IPlayer[]) => ({
         type: 'TEAMS/FETCH_PLAYERS', payload
     } as const),
@@ -30,26 +33,34 @@ export const actions = {
 //sagas
 
 export function* fetchTeamsSaga() {
-    yield put(startFetching())
+    try {
+        yield put(startFetching())
 
-    const res = yield call(TeamsAPI.getTeams)
-    const teams = res.data.teams
+        const res = yield call(TeamsAPI.getTeams)
+        const teams = res.data.teams
 
-    yield put(actions.getTeams(teams))
-    yield put(stopFetching())
-
+        yield put(actions.getTeams(teams))
+        yield put(stopFetching())
+    } catch (e) {
+        yield put(actions.getTeamsFailure())
+    }
 }
 
 export const fetchTeams = () => ({type: 'TEAMS/FETCH-TEAMS'})
 
 export function* fetchPlayersSaga(action: ReturnType<typeof fetchPlayers>) {
-    yield put(startFetching())
+    try {
+        yield put(startFetching())
 
-    const res = yield call(TeamsAPI.getPlayersOfCurrentTeam, action.teamId)
-    const players = res.data.squad
+        const res = yield call(TeamsAPI.getPlayersOfCurrentTeam, action.teamId)
+        const players = res.data.squad
 
-    yield put(actions.getPlayers(players))
-    yield put(stopFetching())
+        yield put(actions.getPlayers(players))
+        yield put(stopFetching())
+    } catch (e) {
+        console.log(e)
+    }
+
 
 }
 

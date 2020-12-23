@@ -3,9 +3,10 @@
   justify-content: space-between;
   padding: 20px;
   width: 930px;
-  height: 100vh;
+  min-height: 100vh;
   font-family: "Josefin Sans", sans-serif;
   font-size: 25px;
+  margin: 0 auto;
   @media (max-width: 967px) {
     justify-content: center;
     flex-wrap: wrap;
@@ -50,7 +51,6 @@
     }
 
     .players {
-      border-bottom: 1px solid #e7e8ec;
       margin: 15px 0 0;
     }
   }
